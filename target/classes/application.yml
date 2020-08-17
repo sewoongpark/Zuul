@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 8801
+
+eureka:
+  instance:
+    instance-id: zuul-instance
+  client:
+    service-url:
+      defaultZone: http://localhost:2890/eureka
+
+zuul:
+  routes:
+   service-a:
+     path: /api/**     
+   service-b:
+     path: /api/**
